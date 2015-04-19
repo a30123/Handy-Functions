@@ -7,7 +7,7 @@ Created on Mon Feb  9 19:20:11 2015
 
 ######################################    
 #alternative code for retrieving variable values
-def read_single_variable_as_stringlist_csv(csvpathfilename, listofvariablename):
+def read_single_variable_as_stringlist_csv(csvpathfilename, variablename):
     import csv
     import numpy as np      
     
@@ -18,7 +18,7 @@ def read_single_variable_as_stringlist_csv(csvpathfilename, listofvariablename):
         contents=csv.reader(csvfile)
         for row in contents:
             if notfirst==1:
-               whichcolumn=row.index(listofvariablename)
+               whichcolumn=row.index(variablename)
                notfirst+=1
             else:
                thelist.append(row[(whichcolumn)])
