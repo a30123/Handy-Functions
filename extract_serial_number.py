@@ -13,7 +13,18 @@ def extract_serial_number(filename):
     value_of_number=int(serial_number_string)
     return value_of_number
     
+#####or
+
+def extract_serial_number2(filename):
+    import re
+    extract_regular_expression=re.search('(_\d+-current)',filename)
+    serial_number_string=extract_regular_expression.group(0)
+    serial_number_string=serial_number_string.replace('-current','')
+    serial_number_string=serial_number_string.replace('_','') 
+    value_of_number=int(serial_number_string)
+    return value_of_number
     
+        
 ##usage    
 
 print('Reading CSV file:',extract_serial_number("run0001_CE_ON__1-setpoint"))
