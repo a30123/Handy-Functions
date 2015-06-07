@@ -7,7 +7,7 @@ Created on Mon Feb  9 19:20:11 2015
 
 ######################################    
 #alternative code for retrieving variable values
-def read_single_variable_as_stringlist_csv(csvpathfilename, variablename):
+def read_single_variable_as_float_csv(csvpathfilename, variablename):
     import csv
     import numpy as np      
     
@@ -21,11 +21,11 @@ def read_single_variable_as_stringlist_csv(csvpathfilename, variablename):
                whichcolumn=row.index(variablename)
                notfirst+=1
             else:
-               thelist.append(row[(whichcolumn)].strip())
+               thelist.append(float(row[(whichcolumn)]))
         
     return np.array(thelist)    
 ######################################
 
 ########example##########################################################
-StepLabelList=read_single_variable_as_stringlist_csv("E://TMAlgroup//setpoint//run1032_6 inch Si.SL.AlN_SLs Buffer_Si_017-4_6 inch Si.SL.AlN_SLs Buffer_Si_017-4_1046-setpoint.csv","StepLabel")
+StepLabelList=read_single_variable_as_float_csv("E://TMAlgroup//setpoint//run1032_6 inch Si.SL.AlN_SLs Buffer_Si_017-4_6 inch Si.SL.AlN_SLs Buffer_Si_017-4_1046-setpoint.csv","StepLabel")
 
