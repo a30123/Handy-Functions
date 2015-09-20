@@ -16,8 +16,8 @@ def PCA_module(training_data,testing_data):
     mlab_pca=mlabPCA(training_data)
 #    scores=mlab_pca.Y
     loadings=mlab_pca.Wt
-    training_mean=np.mean(training_data)
-    training_std=np.std(training_data)
+    training_mean=np.mean(training_data, axis=0)
+    training_std=np.std(training_data,axis=0)
 
     normalized_testing=(testing_data-training_mean)/training_std
     print('PCA TIME: %.2f secs' % (time.time()-tstart))
@@ -29,4 +29,4 @@ X=np.transpose(np.reshape(X,(2,15)))
 
 x_test=np.asarray([[173,54]])
 
-PCA_module(X,x_test)
+transformed_data=PCA_module(X,x_test)
