@@ -6,6 +6,7 @@ Created on Sun May 17 18:06:53 2015
 """
 def write_array_to_csv(filename_path,listname):
     import csv
+    import numpy as np
      
     runnumberfile=open(filename_path,'w',newline='')
     wr=csv.writer(runnumberfile,quoting=csv.QUOTE_MINIMAL,delimiter=',')
